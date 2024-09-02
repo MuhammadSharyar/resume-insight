@@ -1,36 +1,127 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Resume Insight Web App
 
-## Getting Started
+This web app allows users to upload multiple CSV files and ask AI-powered questions about the data within those files. The app leverages various technologies to provide a seamless and efficient experience.
 
-First, run the development server:
+## Table of Contents
+
+- [Tech Stack](#tech-stack)
+- [Features](#features)
+- [Installation](#installation)
+- [Environment Variables](#environment-variables)
+- [Usage](#usage)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Tech Stack
+
+- **Frontend:**
+  - React.js
+  - Next.js
+  - Tailwind CSS
+
+- **Backend:**
+  - Node.js
+  - Express.js
+  - Drizzle ORM
+  - PostgreSQL
+
+- **AI & Data:**
+  - OpenAI (for AI-powered questions)
+  - Langchain (for natural language processing)
+  - Pinecone DB (for vector database)
+
+- **Storage & Authentication:**
+  - AWS S3 (for file storage)
+  - Clerk Auth (for user authentication)
+
+## Features
+
+- **CSV Upload:** Users can upload multiple CSV files simultaneously.
+- **AI Query:** Users can ask AI-powered questions about the uploaded CSV files.
+- **User Authentication:** Secure authentication using Clerk Auth.
+- **Data Storage:** Uploaded CSV files are stored securely on AWS S3.
+- **Vector Database:** Pinecone DB is used for vector search capabilities.
+- **Responsive UI:** Built with Tailwind CSS for a modern and responsive design.
+
+## Installation
+
+### Prerequisites
+
+- Node.js (v14.x or later)
+- PostgreSQL
+- AWS Account (for S3)
+- OpenAI API Key
+- Pinecone DB Account
+- Clerk Account
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/your-username/csv-query-web-app.git
+cd csv-query-web-app
+```
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Set Up Environment Variables
+
+Create a `.env.local` file in the root directory and add the following environment variables:
+
+```plaintext
+NEXT_PUBLIC_CLERK_FRONTEND_API=<Your Clerk Frontend API Key>
+CLERK_API_KEY=<Your Clerk API Key>
+NEXT_PUBLIC_OPENAI_API_KEY=<Your OpenAI API Key>
+AWS_ACCESS_KEY_ID=<Your AWS Access Key ID>
+AWS_SECRET_ACCESS_KEY=<Your AWS Secret Access Key>
+AWS_S3_BUCKET_NAME=<Your S3 Bucket Name>
+PINECONE_API_KEY=<Your Pinecone API Key>
+PINECONE_ENVIRONMENT=<Your Pinecone Environment>
+DATABASE_URL=<Your PostgreSQL Database URL>
+```
+
+### Database Migration
+
+Ensure that your PostgreSQL database is set up. Use Drizzle ORM for migrations:
+
+```bash
+npx drizzle-kit up
+```
+
+## Usage
+
+### Running the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Building for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+npm run build
+```
 
-## Learn More
+### Starting the Production Server
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+This app can be deployed on any cloud platform that supports Node.js and PostgreSQL. For AWS, you can use services like EC2 for the backend, RDS for the database, and S3 for storage.
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contributions are welcome! Please fork the repository and create a pull request with your changes.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+
+This project is licensed under the MIT License.
