@@ -58,8 +58,8 @@ This web app allows users to upload multiple CSV files and ask AI-powered questi
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/csv-query-web-app.git
-cd csv-query-web-app
+git clone https://github.com/MuhammadSharyar/resume-insight.git
+cd resume-insight
 ```
 
 ### Install Dependencies
